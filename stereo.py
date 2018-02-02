@@ -4,9 +4,9 @@ import numpy as np
 import cv2
 import pickle
 
-color = cv2.imread("HNI_0029_0.jpg")
-img_left = cv2.imread("HNI_0029_0.jpg", 0)
-img_right = cv2.imread("HNI_0029_1.jpg", 0)
+color = cv2.imread("HNI_0031_0.jpg")
+img_left = cv2.imread("HNI_0031_0.jpg", 0)
+img_right = cv2.imread("HNI_0031_1.jpg", 0)
 #avg = 3
 #avg = int(color.shape[0]/64)
 

@@ -2,7 +2,7 @@
 # coding: utf-8
 import cv2
 
-depth = 5
+depth = 4
 colormap = cv2.imread("colormap.png")
 zmap = cv2.imread("matched.png", 0)
 
