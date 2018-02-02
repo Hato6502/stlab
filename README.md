@@ -7,3 +7,5 @@ Stereo Lab はステレオ画像を使った新しい遊びを研究するため
 ・Python 2.7
 ・opencv-python 2.4
 ・Blender 2.79
+・<a href="https://github.com/shimat/mpo2jpg">Mpo2Jpg</a> (for Windows)
+・exiftool (for Linux)
