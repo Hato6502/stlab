@@ -11,14 +11,16 @@ with open('bridge_c', 'rb') as f:
 	colormap = pickle.load(f, encoding='latin-1');
 
 print('3D モデル生成中…')
-zoom = 0.01
+xz = 0.01
+yz = 0.01
+zz = 0.00125
 bpy.ops.object.delete()
 verts = []
 edges = []
 faces = []
 for y in range(stereo.shape[0]):
 	for x in range(stereo.shape[1]):
-		verts.append(Vector((x*zoom, y*zoom, stereo[y, x]*zoom)))
+		verts.append(Vector(((x-stereo.shape[1]/2.0)*xz, (y-stereo.shape[0]/2.0)*yz, stereo[y, x]*zz)))
 	#print(str(int((y+1)/stereo.shape[0]*100.0))+'%')
 i = 0
 vci = []
@@ -43,6 +45,6 @@ bpy.context.scene.objects.link(obj)
 obj.select=True
 bpy.ops.export_mesh.stl(filepath = 'output.stl')
 
-print('レンダリング中…')
-bpy.ops.render.render()
-bpy.data.images['Render Result'].save_render(filepath = 'rendered.png')
+#print('レンダリング中…')
+#bpy.ops.render.render()
+#bpy.data.images['Render Result'].save_render(filepath = 'rendered.png')
