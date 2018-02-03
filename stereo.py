@@ -4,16 +4,16 @@ import numpy as np
 import cv2
 import pickle
 
-color = cv2.imread("HNI_0031_0.jpg")
-img_left = cv2.imread("HNI_0031_0.jpg", 0)
-img_right = cv2.imread("HNI_0031_1.jpg", 0)
+color = cv2.imread("HNI_0042_0.jpg")
+img_left = cv2.imread("HNI_0042_0.jpg", 0)
+img_right = cv2.imread("HNI_0042_1.jpg", 0)
 #avg = 3
 #avg = int(color.shape[0]/64)
 
 print('ステレオマッチング中…')
 #img_left = cv2.blur(img_left, (avg, avg))
 #img_right = cv2.blur(img_right, (avg, avg))
-stereo = cv2.StereoSGBM(0, 32, 15)#min，視差，窓サイズ
+stereo = cv2.StereoSGBM(0, 256, 23)#min，視差，窓サイズ
 disp = stereo.compute(img_left, img_right)
 disp = cv2.normalize(disp, alpha = 0.0, beta = 255.0, norm_type = cv2.NORM_MINMAX)
 #disp = cv2.medianBlur(disp, avg)
